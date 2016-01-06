@@ -73,13 +73,4 @@ def observe_prob(numBuckets, numInsertions, numTrials):
     return 1 - sum(probs)/float(numTrials)
 
 
-def main():
-    hash_table = intDict(25)
-    hash_table.addEntry(15, 'a')
-    # random.seed(1) # Uncomment for consistent results
-    for i in range(20):
-        hash_table.addEntry(int(random.random() * (10 ** 9)), i)
-    hash_table.addEntry(15, 'b')
-    print hash_table.buckets
-    print '\n', 'hash_table =', hash_table
-    print hash_table.getValue(15)
+print observe_prob(10, 1000, 1)
